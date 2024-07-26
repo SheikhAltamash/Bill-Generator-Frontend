@@ -6,7 +6,9 @@ import axios from 'axios';
 export const AlllBills = () => {
     let [bills, setBills] = React.useState([])
     let fetchData =async () => {
-        let data = await axios.get("http://localhost:8080/AllBills");  
+        let data = await axios.get(
+          "https://bill-generator-backend.onrender.com/AllBills"
+        );  
        setBills(data.data)
     }
     useEffect(() => {

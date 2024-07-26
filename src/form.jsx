@@ -41,7 +41,10 @@ export default function Form() {
   let validateInvoice = async () => {
     try {
       let invoice = formData.invoiceNo;
-      let data = await axios.post("http://localhost:8080/invoiceCheck", { invoice });  
+      let data = await axios.post(
+        "https://bill-generator-backend.onrender.com/invoiceCheck",
+        { invoice }
+      );  
       if (data.data == "Alright") {
     
           console.log(formData);

@@ -31,7 +31,10 @@ export const Bill = ({ data }) => {
 
   let UploadData = async (formData) => {
     try {
-      let data = await axios.post("http://localhost:8080/get", { formData });
+      let data = await axios.post(
+        "https://bill-generator-backend.onrender.com/get",
+        { formData }
+      );
       console.log(data);
     } catch (e) {
       console.log(e.message);
