@@ -1,0 +1,398 @@
+.top_BILL{
+    display: flex;
+    justify-content: space-between;
+   height: fit-content;  
+  padding-top: 1rem;
+}
+.left_bill_BILL h2{
+font-family: "poppins";
+font-weight: 600;
+margin-top: 0;
+margin-bottom: -1rem;
+}
+.left_bill_BILL h3{
+    font-family: "Inconsolata";
+    font-weight: 300;
+    margin-top: 0rem;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem; 
+    
+    
+}
+.right_BILL p
+{
+    background: #000;
+font-family: "roboto";
+margin-top: -0.8rem;
+font-size: 0.8rem !important;
+font-weight: 300;
+}
+.right_BILL{
+text-align: right;
+padding-top: 0.8rem;
+margin-bottom: -4rem;
+
+}
+.hr_BILL{
+    border: 1px solid #000;
+}
+.h3_BILL{
+    font-family: "poppins";
+    font-weight: 350;
+    text-align: center;
+    
+    margin: 0;
+    margin-top: 1.3rem;
+    margin-bottom: 0rem;
+}
+.h3_BILL span{
+    font-weight: 500;
+    color: maroon;
+}
+.head_BILL{
+    font-family: "roboto";
+    font-weight: 700;
+    font-size: 0.7rem;
+    
+}.s_BILL{
+    font-family: "poppins";
+    font-size: 0.8rem;
+}
+.mid_BILL .p_bill_BILL{
+  
+    margin: 0;
+    padding-top: 0.2rem;
+
+}
+
+.dec_BILL{
+    background: orange;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.5rem;
+height: fit-content;
+padding: 0.5rem;
+border-radius: 10px;
+margin-top: 1rem;
+}
+.right_dec_BILL{
+    display: flex;
+
+   
+}
+.mid_BILL{
+    background: rgba(255, 255, 255, 0.48);
+    margin-top: -1rem;
+}
+
+.left_dec_BILL h4{
+    margin-top: -0rem;
+  
+}
+.left_bill_BILL{
+      display: flex;
+      gap: 0.5rem;
+}
+.right_dec_BILL h4{
+    margin-left: 0.9rem;
+margin-top: -0rem;
+   
+}
+.img_bill{
+    height: 3rem;
+    margin-top: -1px;
+}
+.one_dec_BILL{
+    display: flex;
+        justify-content: space-between;
+margin-top: 0.5rem;
+
+
+padding-left: 1rem;
+padding-right: 2rem;
+
+}
+.one_dec_BILL p{
+margin-top: -0rem;
+margin-bottom: 0rem;
+font-family: "roboto";
+}
+.one_right_dec_BILL{
+    display: flex;
+
+}
+.one_right_dec_BILL p{
+    margin-left: 2rem;
+}
+.hr_dec_BILL{
+    margin-top: 0.5rem;
+border: 1px solid red;
+margin-top: 0.9rem;
+margin-bottom: 0.9rem;
+}
+.total_BILL{
+    
+   display: flex;
+   justify-content: space-between;
+
+}
+.total_BILL p{
+    margin-right: 3rem;
+    font-family: "roboto";
+    font-size: 0.9rem;
+}
+.hr_dec_total_BILL{
+    border: 1px solid orange;
+    margin-top: 2rem;
+    width: 300px;
+
+}
+.total_BILL div p span{
+    font-weight: 500;
+}
+.button_bill{
+    color: white;
+background: blue;
+border: none;
+border-radius: 10px;
+padding: 0.5rem;
+
+}
+.h3_n_BILL{
+    font-family: "roboto";
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 0.6rem;
+    margin-bottom: -0.5rem;
+}
+.table_container_BILL {
+  margin: 20px 0;
+  font-size: 0.6rem;
+}
+
+.styled_table_BILL {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.styled_table_BILL th, .styled_table_BILL td {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+.styled_table_BILL th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.styled_table_BILL tr{
+  background-color: #f9f9f9d1;
+}
+
+.styled_table_BILL tr:hover {
+  background-color: #ddd;
+}
+thead{
+    font-family: "roboto";
+}
+td{
+    font-family: "poppins";
+}
+.total_BILL{
+  margin: 0;
+    display: block;
+}
+.tr_table_BILL th{
+    background:rgba(128, 0, 0, 0.628)!important;
+    color: white;
+}
+.total_BILL p{
+    margin: 0;
+    padding-top: 0.5rem;
+    font-weight: 500;
+}
+.icon_serv_BILL{
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+margin-bottom: -0.3rem;
+}
+.total_BILL p span{
+    font-weight: 700;
+}
+.contact_BILL{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    
+}
+.contact_BILL h5{
+    font-weight: 500;
+    font-family: "poppins";
+    margin: 0;
+    font-size: 0.8rem !important;
+margin-top: 1rem;
+
+}
+.contact_BILL div{
+   
+  
+    padding: 0;
+}
+.contact_BILL p {
+    margin: 0;
+    font-family: "roboto";
+    font-size: 0.6rem;
+}
+.p_c_BILL{
+    font-size: 0.8rem !important;
+    margin-right: 0.3rem;
+    margin-bottom: -0.1rem;
+}
+
+.root_BILL{
+    width: 400px;
+    margin: auto;
+    position: relative;
+    background-image: url('p.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 2rem;
+    
+}
+
+/* .root_BILL::before{
+     
+ 
+ content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('p.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: opacity(0.1);
+  z-index: -1;  
+} */
+
+.button_bill_BILL{
+    color: white;
+    background: blue;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+   
+
+    font-family: "poppins";
+    font-weight: 500;
+margin: auto;
+}
+.one_BILL{
+    background: #000;
+  
+  margin: auto;
+}
+
+
+.button{
+    display: flex;
+    width: fit-content;
+    gap: 2rem;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+
+.bill_all{
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid  rgba(128, 128, 128, 0.464);
+    padding: 1rem;
+   
+
+}
+
+
+.bill_main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+.bill_all h2{
+    margin:0;
+    font-family: "roboto";
+    font-weight: 400;
+margin-bottom: 0.7rem;
+}
+.bill_all h2 span{
+    color: maroon;
+    font-weight: 500;
+
+
+}
+
+.bill_all p{
+    font-family: "poppins";
+    margin: 0;
+    margin-top: 0.3rem;
+}
+
+
+.bill_all button{
+    margin-top: 0.5rem;
+    border: none;
+    background: none;
+    border: 1px solid;
+    font-family: "roboto";
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width:700px){
+    .bill_all{
+        display: block;
+        margin: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,189 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+margin-bottom: 0.5rem;
+
+}
+.left{
+    display: flex;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 0.7rem;
+    font-family: "poppins";
+
+}
+.size-4{
+ height: 1rem !important;
+ width: 1.5rem;
+ margin-left: 1rem;
+ margin-right: 0.5rem;
+}
+
+.right{
+
+    width: fit-content;
+    font-family: "poppins";
+    text-decoration: none;
+    display: flex;
+    gap:2rem
+
+}
+.home_link{
+    color: #fff;
+        text-decoration: none;
+        margin-top: 0.5rem;
+        background: #000;
+        height: fit-content;
+        margin-right: 1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        
+}
+.hr_form{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+.home_main{
+    margin: 0;
+    margin-top: -0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+.img{
+    
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: auto;
+    gap: 2rem;
+}
+.img_h{
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px;
+
+}
+.mid_div h3{
+    font-size: 3rem;
+    font-family: "roboto";
+    margin: 0;
+    margin-top: 1rem;
+
+}
+.mid_div{
+    width: 400px;
+
+}
+.mid_div p{
+font-family: "poppins";
+}
+.btn_h{
+    background: maroon;
+    color: white;
+    display: block;
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-align: center;
+margin-top: 4rem;
+padding: 1rem;
+border-radius: 20px;
+font-family: "roboto";
+  
+}
+.down{
+    width: fit-content;
+    margin: auto;
+    margin-top: 4rem;
+    padding-left: 1rem
+}
+.down h3{
+    font-size: 1.3rem;
+    font-family: "roboto";
+    color: darkgreen;
+    margin: 0;
+}
+.down p{
+    font-size: 1.1rem;
+    font-family: "poppins";
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hone{
+    background: maroon;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-family: "poppins";
+    border-radius: 10px;
+    display: block;
+    margin-top: 2rem !important;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    font-size: 1.2rem;
+
+
+}
+@media only screen and (max-width:700px){
+.img_h{
+    width: 300px;
+   
+    display: block;
+     margin: auto;
+}
+.left{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.right{
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+.home_link{
+    margin-right: 0.2rem;
+}
+.size-4{
+    width: 1rem;
+}
+.img{
+    display: block;
+}
+.mid_div{
+    width: 300px;
+  
+}
+.mid_div h3{
+    font-size: 2rem;
+}
+.btn_h{
+  
+    font-size: 1rem;
+    width: 200px;
+    margin: auto;
+    padding: 0.7rem;
+      margin-top: 2rem;
+}
+.down{
+padding-left: 1rem;
+}
+.img{
+      margin: auto;
+}
+}
+.btn_back{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: "roboto";
+  
+    display: flex;
+    width: fit-content;
+    gap: 0.5rem;
+    border: 1px solid darkblue;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: darkblue;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}

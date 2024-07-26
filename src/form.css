@@ -1,0 +1,78 @@
+.form_div{
+ 
+    width: fit-content;
+    margin: auto;
+
+}
+h1{
+    font-family: "roboto";
+
+}
+.form_div label{
+    font-family: "poppins";
+    display: block;
+    
+}
+.form_div input{
+    width: 80%;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: "roboto"
+    
+}
+.add , .date{
+    display: flex;
+
+}
+.h3_service{
+    font-weight: 500;
+    font-family: "roboto";
+}
+
+
+.div_serve {
+   display: flex;
+  
+}
+.div_serve label{
+    width: 100%;
+}
+.div_serve input {
+    height: 1.2rem;
+}
+.two{
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px ;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    margin-top: -0.7rem;
+    
+}
+.two input{
+    width: 40px;
+    height: 10px;
+    margin: 0;
+    margin-left: 0.3rem;
+    margin-right: 1rem;
+}
+.two select{
+    height: 30px;
+    margin: 0;
+}
+.Error_form{
+    font-family: "roboto";
+    font-size: 0.7rem;
+    margin: 0;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    
+}
