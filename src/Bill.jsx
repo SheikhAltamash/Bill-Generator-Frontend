@@ -60,7 +60,7 @@ export const Bill = ({ data }) => {
       const pdfWidth = 190;
       const height = (canvas.height * pdfWidth) / canvas.width;
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, height);
-      pdf.save("invoice.pdf");
+      pdf.save(`${formData.invoiceNo}.pdf`);
     
     } catch (error) {
       console.error("Error loading image: ", error);

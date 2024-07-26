@@ -258,7 +258,8 @@ margin-top: 1rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding-left: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
     
 }
 
@@ -307,7 +308,6 @@ margin: auto;
     margin-bottom: 4rem;
     flex-wrap: wrap;
     text-align: center;
-
 }
 
 
