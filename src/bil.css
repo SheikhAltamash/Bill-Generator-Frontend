@@ -64,7 +64,9 @@ margin-bottom: -4rem;
     padding-top: 0.2rem;
 
 }
-
+.mid_BILL{
+    padding-left: 2rem;
+}
 .dec_BILL{
     background: orange;
     color: white;
@@ -81,10 +83,7 @@ margin-top: 1rem;
 
    
 }
-.mid_BILL{
-    background: rgba(255, 255, 255, 0.48);
-    margin-top: -1rem;
-}
+
 
 .left_dec_BILL h4{
     margin-top: -0rem;
@@ -172,7 +171,7 @@ padding: 0.5rem;
 }
 
 .styled_table_BILL {
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
 }
 
@@ -251,34 +250,21 @@ margin-top: 1rem;
 }
 
 .root_BILL{
-    width: 400px;
-    margin: auto;
+    width: 440px;
+  
     position: relative;
-    background-image: url('p.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-padding-left: 1rem;
-padding-right: 1rem;
-    
+   
+padding-top: 8rem;
+   height: 720px;
+   margin-top:0;
+
+width:520px;
+padding-left: 2rem;
+
+
 }
 
-/* .root_BILL::before{
-     
- 
- content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('p.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: opacity(0.1);
-  z-index: -1;  
-} */
+
 
 .button_bill_BILL{
     color: white;
@@ -293,7 +279,7 @@ padding-right: 1rem;
 margin: auto;
 }
 .one_BILL{
-    background: #000;
+   background: #000;
   
   margin: auto;
 }
@@ -304,7 +290,7 @@ margin: auto;
     width: fit-content;
     gap: 2rem;
     margin: auto;
-    margin-top: 3rem;
+   
     margin-bottom: 4rem;
     flex-wrap: wrap;
     text-align: center;
@@ -366,33 +352,36 @@ margin-bottom: 0.7rem;
         margin: auto;
     }
 }
+.loading_p{
+   font-size: 2rem;
+   margin: auto;
+   font-family: "poppins";
+   font-weight: 300; 
+}
+.img_bill_bg{
+  position: fixed;
+  top: 2.3rem;
+  left: 0;
+  z-index: -1; /* Ensure the PDF is behind all other content */
 
 
+width: 100%;
+padding-left: 1rem;
+
+ 
+}
+.pdf-background{
+    width: 500px;
+    height: 710px;
+    display: block;
+    margin: auto;
+   
+
+}
 
 
+.BILL_MAIN_TOP{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    width: fit-content;
+    margin: auto;
+}
