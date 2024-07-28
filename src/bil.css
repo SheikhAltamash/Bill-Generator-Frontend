@@ -1,24 +1,5 @@
-.top_BILL{
-    display: flex;
-    justify-content: space-between;
-   height: fit-content;  
-  padding-top: 1rem;
-}
-.left_bill_BILL h2{
-font-family: "poppins";
-font-weight: 600;
-margin-top: 0;
-margin-bottom: -1rem;
-}
-.left_bill_BILL h3{
-    font-family: "Inconsolata";
-    font-weight: 300;
-    margin-top: 0rem;
-    margin-bottom: 0;
-    padding-bottom: 0.5rem; 
-    
-    
-}
+
+
 .right_BILL p
 {
     background: #000;
@@ -37,32 +18,60 @@ margin-bottom: -4rem;
     border: 1px solid #000;
 }
 .h3_BILL{
-    font-family: "poppins";
-    font-weight: 350;
+    font-family: "Cooper Black";
+    font-weight: 600;
     text-align: center;
     
     margin: 0;
     margin-top: 1.3rem;
     margin-bottom: 0rem;
+    margin-top: 0.5rem;
+
 }
 .h3_BILL span{
     font-weight: 500;
     color: maroon;
+    margin-top: -1rem;
 }
 .head_BILL{
-    font-family: "roboto";
-    font-weight: 700;
-    font-size: 0.7rem;
+    font-family: "Cooper black";
+    font-weight: 600;
+    font-size: 0.6rem;
+    color: maroon;
     
 }.s_BILL{
-    font-family: "poppins";
-    font-size: 0.8rem;
+ font-family: 'Century Gothic Paneuropean';
+    font-size: 0.7rem;
+    font-weight: 600;
 }
-.mid_BILL .p_bill_BILL{
+ .p_bill_BILL{
   
     margin: 0;
-    padding-top: 0.2rem;
+    padding-top: 0.1rem;
 
+}
+.s_INV{
+    color: maroon;
+    margin-left: 0.3rem;
+}
+.mid_BILL_MAIN{
+ 
+    display: flex;
+   
+ width: 450px;
+
+gap: 6.5rem;
+}
+
+.mid_right{
+
+    padding-top: 0.2rem;
+}
+.mid_right p{
+    margin: 0;
+    font-family: "poppins";
+    font-size: 0.7rem;
+    margin-top: 0.1rem;
 }
 .mid_BILL{
     padding-left: 2rem;
@@ -138,8 +147,14 @@ margin-bottom: 0.9rem;
 }
 .total_BILL p{
     margin-right: 3rem;
-    font-family: "roboto";
+    font-family: "Cooper Black";
     font-size: 0.9rem;
+    color: maroon;
+    font-weight: 700;
+}
+.total_BILL p span{
+    color: black;
+    font-family: 'Century Gothic Paneuropean';
 }
 .hr_dec_total_BILL{
     border: 1px solid orange;
@@ -159,15 +174,17 @@ padding: 0.5rem;
 
 }
 .h3_n_BILL{
-    font-family: "roboto";
+    font-family: "Cooper Black";
     font-size: 1.3rem;
     margin: 0;
     margin-top: 0.6rem;
     margin-bottom: -0.5rem;
+    font-weight: 200 !important;
 }
 .table_container_BILL {
   margin: 20px 0;
   font-size: 0.6rem;
+  text-align: center;
 }
 
 .styled_table_BILL {
@@ -201,6 +218,13 @@ td{
 .total_BILL{
   margin: 0;
     display: block;
+   
+    background: white;
+    width: fit-content;
+margin-left: 2rem;
+margin-top: -1.1rem;
+  
+    
 }
 .tr_table_BILL th{
     background:rgba(128, 0, 0, 0.628)!important;
@@ -208,13 +232,14 @@ td{
 }
 .total_BILL p{
     margin: 0;
-    padding-top: 0.5rem;
+    padding-top: 0.2rem;
     font-weight: 500;
+    font-size: 0.7rem;
 }
 .icon_serv_BILL{
-    font-size: 1.2rem !important;
+    font-size: 0.7rem !important;
     font-weight: 300 !important;
-margin-bottom: -0.3rem;
+margin-bottom: -0.1rem;
 }
 .total_BILL p span{
     font-weight: 700;
@@ -249,20 +274,6 @@ margin-top: 1rem;
     margin-bottom: -0.1rem;
 }
 
-.root_BILL{
-    width: 440px;
-  
-    position: relative;
-   
-padding-top: 8rem;
-   height: 720px;
-   margin-top:0;
-
-width:520px;
-padding-left: 2rem;
-
-
-}
 
 
 
@@ -371,17 +382,70 @@ padding-left: 1rem;
  
 }
 .pdf-background{
-    width: 500px;
-    height: 710px;
+    width: 530px;
+    height:710px;
     display: block;
     margin: auto;
-   
+   margin-top: -2rem;
 
 }
 
+.root_BILL{
+   
+  
+    position: relative;
+   
+padding-top: 8rem;
+   height:750px;
+   margin-top:0;
+overflow:hidden;
+width:550px;
+padding-left: 2rem;
+margin-top: -2rem;
+/* background: #1e0b8861; */
+}
 
 .BILL_MAIN_TOP{
 
     width: fit-content;
     margin: auto;
 }
+/* .button{
+    position: relative;
+    top: -8rem;
+} */
+.btn_back_BILL{
+    position: relative;
+    z-index: 2;
+}
+.gst{
+    display: flex;
+    
+    width: 100%
+}
+.gst label{
+    width: 100%;
+   
+}
+.gst input{
+    height: 1.2rem;
+    margin-top: 0.2rem;
+    
+    
+}
+.button{
+position: fixed;
+top: 3rem;
+display: block;
+}
+.icon_table_rs{
+height: 0.7rem !important;
+margin-top: 0.1rem;
+
+}
+.amount_bill_table{
+   width: 3rem;
+}
+/* .input_gstNo{
+  
+} */

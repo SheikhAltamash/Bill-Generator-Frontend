@@ -1,121 +1,123 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Link } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom";
-import "./form.css"
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import DeleteIcon from "@mui/icons-material/Delete";
+import "./form.css";
+
 export default function Form() {
- const location = useLocation();
-  const { formDataB} = location.state || {};
- 
-  let initialData = {
+  const location = useLocation();
+  const { formDataB } = location.state || {};
+
+  const [errors, setErrors] = useState({});
+  const [serviceInputs, setServiceInputs] = useState([{ name: "", price: "" }]);
+  const pdfRef = useRef();
+  const navigate = useNavigate();
+
+  const initialData = {
     customerName: "",
     customerAddress: "",
     customerEmail: "",
     invoiceNo: "",
     date: "",
-    total:"",
-    services: {
-      videoEditing: { selected: false, minutes: "", quality: "1080p",amount:"" },
-      photoEditing: { selected: false, photos: "", quality: "1080p",amount:"" },
-      graphicDesigning: { selected: false, type: "" ,amount:"" },
-      gst: { selected: false },
-    },
+    total: "",
+    subTotal: "",
+    typeOfService: "",
+    services: [{ name: "", price: "" }],
+    gst: false,
+    gstNo: ""
   };
-  let data;
-  if (formDataB) {
-    data = formDataB;
 
-  } else {
-    data = initialData;
-    console.log("initialData");
-        console.log(formDataB);
-    
-}
-  const [formData, setFormData] = useState(data);
-  const [errors, setErrors] = useState({});
-  const pdfRef = useRef();
-  const navigate = useNavigate();
+  const [formData, setFormData] = useState(initialData);
 
-  let validateInvoice = async () => {
+  useEffect(() => {
+    if (formDataB) {
+      setFormData(formDataB);
+      setServiceInputs(
+        formDataB.services && formDataB.services.length > 0
+          ? formDataB.services
+          : [{ name: "", price: "" }]
+      );
+    }
+  }, [formDataB]);
+
+  const validateInvoice = async () => {
     try {
       let invoice = formData.invoiceNo;
       let data = await axios.post(
         "https://bill-generator-backend.onrender.com/invoiceCheck",
-        { invoice }
-      );  
-      if (data.data == "Alright") {
-    
-          console.log(formData);
-          try {
-            setFormData(initialData);
-            navigate("/bill", { state: { formData: formData } });
-          } catch (e) {
-            console.log(e);
-          }
-        
-      }
-      else {
-          setErrors((prevErrors) => ({
+        {
+          invoice,
+        }
+      );
+
+      if (data.data === "Alright") {
+        setFormData(initialData);
+        navigate("/bill", { state: { formData: formData } });
+      } else {
+        setErrors((prevErrors) => ({
           ...prevErrors,
-          invoiceNo: "Invoice number already exist !",
+          invoiceNo: "Invoice number already exists!",
         }));
-      
       }
-
-
     } catch (e) {
       console.log(e.message);
-}
-
-
-}
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" });
+    }
   };
 
-  const handleServiceChange = (service, key, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      services: {
-        ...prevData.services,
-        [service]: {
-          ...prevData.services[service],
-          [key]: value,
-        },
-      },
+  const handleServiceChange = (index, key, value) => {
+    const updatedServices = [...serviceInputs];
+    updatedServices[index][key] = value;
+    setServiceInputs(updatedServices);
+    setFormData({ ...formData, services: updatedServices });
+  };
+
+  const addService = () => {
+    if (serviceInputs.length < 10) {
+      setServiceInputs([...serviceInputs, { name: "", price: "" }]);
+    }
+  };
+
+  const removeService = (index) => {
+    const updatedServices = serviceInputs.filter((_, i) => i !== index);
+    setServiceInputs(updatedServices);
+    setFormData({ ...formData, services: updatedServices });
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: type === "checkbox" ? { selected: checked } : value,
+    }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: "",
     }));
   };
 
-
   const handleSubmit = async (e) => {
-     e.preventDefault();
-   
-   
+    e.preventDefault();
+
     const newErrors = {};
-
     if (!formData.customerName)
-      newErrors.customerName = "Customer Name is required !";
-    if (!formData.customerAddress)
-      newErrors.customerAddress = "Customer Address is required !" ;
+      newErrors.customerName = "Customer Name is required!";
+
     if (!formData.customerEmail)
-      newErrors.customerEmail = "Customer Email is required !";
-    if (!formData.invoiceNo) newErrors.invoiceNo = "Invoice Number is required !";
-    if (!formData.date) newErrors.date = "Date is required !";
+      newErrors.customerEmail = "Customer Email is required!";
+    if (!formData.invoiceNo)
+      newErrors.invoiceNo = "Invoice Number is required!";
+    if (!formData.date) newErrors.date = "Date is required!";
+    if (!formData.typeOfService)
+      newErrors.typeOfService = "Select Type of Service";
 
- if (Object.keys(newErrors).length > 0) {
-   setErrors(newErrors);
- } else {
-   await validateInvoice();
- }
-    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      await validateInvoice();
+    }
   };
-
-
 
   return (
     <div className="form_main_div">
@@ -174,21 +176,7 @@ export default function Form() {
           </div>
 
           <div className="date">
-            <div className="one">
-              <label htmlFor="customerAddress">Address</label>
-              <input
-                type="text"
-                name="customerAddress"
-                placeholder="Customer Address"
-                value={formData.customerAddress}
-                onChange={handleChange}
-              />
-              {errors.customerAddress && (
-                <p style={{ color: "red" }} className="Error_form">
-                  {errors.customerAddress}
-                </p>
-              )}
-            </div>
+       
             <div className="one">
               <label htmlFor="date">Date</label>
               <input
@@ -207,153 +195,95 @@ export default function Form() {
           </div>
 
           <div className="div_service">
-            <div>
-              <h3 className="h3_service">Select Services:</h3>
-              <div className="div_serve">
-                <label>Video Editing</label>
-                <input
-                  className="in_serv"
-                  type="checkbox"
-                  checked={formData.services.videoEditing.selected}
-                  onChange={(e) =>
-                    handleServiceChange(
-                      "videoEditing",
-                      "selected",
-                      e.target.checked
-                    )
-                  }
-                />
-              </div>
+            <h3 className="h3_service">Services:</h3>
+            <label htmlFor="" id="ser_form">
+              Select Service Type
+            </label>
+            <select
+              name="typeOfService"
+              id=""
+              className="select_form"
+              value={formData.typeOfService}
+              onChange={handleChange}
+            >
+              <option value="Advertisement Video">Advertisement Video</option>
+              <option value="Presentation Video">Presentation Video</option>
+              <option value="Reel & Short type">Reel & Short type</option>
+              <option value="Documentry & Short film">
+                Documentry & Short film
+              </option>
+              <option value="Color Correction">Color Correction</option>
+              <option value="Tutorial Video">Tutorial Video</option>
+              <option value="Youtube Video">Youtube Video</option>
+              <option value="Vlog's">Vlog's</option>
+            </select>
+            {errors.typeOfService && (
+              <p style={{ color: "red" }} className="Error_form">
+                {errors.typeOfService}
+              </p>
+            )}
 
-              {formData.services.videoEditing.selected && (
-                <div className="two">
-                  <label>Minutes:</label>
-                  <input
-                    type="number"
-                    value={formData.services.videoEditing.minutes}
-                    onChange={(e) =>
-                      handleServiceChange(
-                        "videoEditing",
-                        "minutes",
-                        e.target.value
-                      )
-                    }
-                  />
-
-                  <label>Quality: </label>
-                  <select
-                    value={formData.services.videoEditing.quality}
-                    onChange={(e) =>
-                      handleServiceChange(
-                        "videoEditing",
-                        "quality",
-                        e.target.value
-                      )
-                    }
-                  >
-                    <option value="1080p">1080p</option>
-                    <option value="2k">2k</option>
-                    <option value="4k">4k</option>
-                  </select>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <div className="div_serve">
-                <label> Photo Editing</label>
-                <input
-                  type="checkbox"
-                  checked={formData.services.photoEditing.selected}
-                  onChange={(e) =>
-                    handleServiceChange(
-                      "photoEditing",
-                      "selected",
-                      e.target.checked
-                    )
-                  }
-                />
-              </div>
-
-              {formData.services.photoEditing.selected && (
-                <div className="two">
-                  <label>Photos: </label>
-                  <input
-                    type="number"
-                    value={formData.services.photoEditing.photos}
-                    onChange={(e) =>
-                      handleServiceChange(
-                        "photoEditing",
-                        "photos",
-                        e.target.value
-                      )
-                    }
-                  />
-
-                  <label>
-                    Quality:
-                    <select
-                      value={formData.services.photoEditing.quality}
-                      onChange={(e) =>
-                        handleServiceChange(
-                          "photoEditing",
-                          "quality",
-                          e.target.value
-                        )
-                      }
-                    >
-                      <option value="1080p">1080p</option>
-                      <option value="2k">2k</option>
-                      <option value="4k">4k</option>
-                    </select>
-                  </label>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <div className="div_serve">
-                <label>Graphic Designing</label>
-                <input
-                  type="checkbox"
-                  checked={formData.services.graphicDesigning.selected}
-                  onChange={(e) =>
-                    handleServiceChange(
-                      "graphicDesigning",
-                      "selected",
-                      e.target.checked
-                    )
-                  }
-                />
-              </div>
-
-              {formData.services.graphicDesigning.selected && (
-                <div className="">
-                  <label>Type:</label>
+            <div className="add_service">
+              <label htmlFor="add_service">Add Service</label>
+              {serviceInputs.map((service, index) => (
+                <div key={index} className="add_service_inputs">
                   <input
                     type="text"
-                    value={formData.services.graphicDesigning.type}
+                    placeholder="Enter Service Name"
+                    value={service.name}
                     onChange={(e) =>
-                      handleServiceChange(
-                        "graphicDesigning",
-                        "type",
-                        e.target.value
-                      )
+                      handleServiceChange(index, "name", e.target.value)
                     }
                   />
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    value={service.price}
+                    onChange={(e) =>
+                      handleServiceChange(index, "price", e.target.value)
+                    }
+                  />
+                  {index > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => removeService(index)}
+                      className="btn_rm_ser"
+                    >
+                      <DeleteIcon />
+                    </button>
+                  )}
                 </div>
+              ))}
+              {serviceInputs.length < 10 && (
+                <button
+                  type="button"
+                  onClick={addService}
+                  className="btn_form_addService"
+                >
+                  Add Service
+                </button>
               )}
             </div>
-            <div className="div_serve">
-              <label> Including GST (18%)</label>
+
+            <div className="gst">
+              <label htmlFor="gst">Including (18%) GST </label>
               <input
                 type="checkbox"
-                checked={formData.services.gst.selected}
+                name="gst"
+                className="gst_form"
                 onChange={(e) =>
-                  handleServiceChange("gst", "selected", e.target.checked)
+                  handleChange({
+                    target: { name: "gst", value: e.target.checked },
+                  })
+                 
                 }
-              />
-            </div>
+                 checked={formData.gst}
+              /> </div>
+              {formData.gst &&
+                <div className="input_gstNo">
+                  <input type="" name="gstNo" placeholder="Enter GSTIN Number" onChange={handleChange} value={formData.gstNo} />
+                </div>}
+           
           </div>
 
           <Button

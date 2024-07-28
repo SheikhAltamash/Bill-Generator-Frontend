@@ -23,10 +23,7 @@ h1{
     font-family: "roboto"
     
 }
-.add , .date{
-    display: flex;
 
-}
 .h3_service{
     font-weight: 500;
     font-family: "roboto";
@@ -74,5 +71,42 @@ h1{
     margin-bottom: 1rem;
     margin-right: 1rem;
     margin-left: 0.5rem;
+    
+}
+.select_form{
+    margin: auto;
+  height: 30px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 0.2rem;
+  font-family: "poppins";
+}
+
+.add_service_inputs{
+    display: flex;
+    gap: 1rem;
+
+}
+.btn_form_addService{
+    font-family: "roboto";
+    
+    border: none;
+    background: rgba(128, 0, 0, 0.845);
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: white;
+
+
+    margin-bottom: 2rem;
+}
+.btn_rm_ser{
+    font-family: "roboto";
+    border: none;
+    height: fit-content;
+    padding: 0.4rem;
+    margin-top: 0.3rem;
+    border-radius: 10px;
+    color: black;
     
 }
