@@ -60,7 +60,7 @@ margin-bottom: -4rem;
    
  width: 450px;
 
-gap: 6.5rem;
+gap: 8.5rem;
 }
 
 .mid_right{
@@ -175,10 +175,10 @@ padding: 0.5rem;
 }
 .h3_n_BILL{
     font-family: "Cooper Black";
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
-    margin-top: 0.6rem;
-    margin-bottom: -0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: -1rem;
     font-weight: 200 !important;
 }
 .table_container_BILL {
@@ -448,3 +448,20 @@ margin-top: 0.1rem;
 /* .input_gstNo{
   
 } */
+
+.total_BILL{
+    position: fixed;
+    bottom: 7rem;
+    
+}
+.img_qr{
+width: fit-content;
+height: fit-content;
+   
+    position: fixed;
+    right: 13rem;
+    bottom: 6.5rem;
+}
+.img_qr img{
+    height: 5rem;
+}

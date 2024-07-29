@@ -41,7 +41,7 @@ export const Bill = ({ data }) => {
   
     const input = pdfRef.current;
     const canvas = await html2canvas(input, {
-      scale: 3,
+      scale: 2,
       useCORS: true,
       allowTaint: true,
     });
@@ -110,9 +110,7 @@ export const Bill = ({ data }) => {
               <Description formData={formData}></Description>
             </div>
           </div>
-          <div className="img_bill_bg">
-            <img className="pdf-background" src={pdf} />
-          </div>
+      
         </div>
       </div>
       {!check && (
