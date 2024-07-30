@@ -60,18 +60,20 @@ margin-bottom: -4rem;
    
  width: 450px;
 
-gap: 8.5rem;
+gap:3rem
 }
 
 .mid_right{
 
     padding-top: 0.2rem;
+    position: absolute;right: 4rem;
 }
 .mid_right p{
     margin: 0;
     font-family: "poppins";
     font-size: 0.7rem;
     margin-top: 0.1rem;
+    width: 100%;
 }
 .mid_BILL{
     padding-left: 2rem;
