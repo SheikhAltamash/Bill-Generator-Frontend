@@ -8,7 +8,7 @@ import { jsPDF } from "jspdf";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import pdf from "./assets/pdfimg.jpg";
+import logo from "./assets/logo.png";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import DownloadIcon from "@mui/icons-material/Download";
 export const Bill = ({ data }) => {
