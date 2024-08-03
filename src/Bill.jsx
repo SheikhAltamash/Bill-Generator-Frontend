@@ -61,7 +61,7 @@ export const Bill = ({ data }) => {
 
   return (
     <div>
-      <Link className="btn_back_BILL" to={"/"}>
+      <Link className="btn_back_BILL" to={"/all"}>
         <ArrowBackIcon className="icon_form_BILL"></ArrowBackIcon>
       </Link>
       <div className="BILL_MAIN_TOP">
@@ -76,7 +76,7 @@ export const Bill = ({ data }) => {
                     <span className="head_BILL"> SERVICE TYPE: </span>{" "}
                     <span className="s_BILL">{formData.typeOfService}</span>
                   </p>
-                  <p className="p_bill_BILL">
+                  <p className="p_bill_BILL bill_to_BILL">
                     <span className="head_BILL"> BILLED TO : </span>{" "}
                     <span className="s_BILL">{formData.customerName}</span>
                   </p>

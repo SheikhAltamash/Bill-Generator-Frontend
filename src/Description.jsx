@@ -55,41 +55,42 @@ export const Description = ({ formData }) => {
       </div>
 
       <div className="img_bill_bg">
-        <div className="total_BILL">
-          {formData.gst && (
-            <p>
-              {" "}
-              <p>
-                Sub-Total :{" "}
-                <span>
-                  {totals.subTotal}
-                  <CurrencyRupeeIcon className="icon_serv_BILL"></CurrencyRupeeIcon>
-                </span>
-              </p>
-              <p>
-                GST(18%) :{" "}
-                <span>
-                  {totals.gst}
-                  <CurrencyRupeeIcon className="icon_serv_BILL"></CurrencyRupeeIcon>
-                </span>
-              </p>
-            </p>
-          )}
-
-          <p>
-            Total Price :{" "}
-            <span>
-              {totals.total}
-
-              <CurrencyRupeeIcon className="icon_serv_BILL"></CurrencyRupeeIcon>
-            </span>
-          </p>
-        </div>
-        <div className="img_qr">
-          <img src={qr} alt="" />
-        </div>
-
         <img className="pdf-background" src={pdf} />
+        <div className="total_bill_QR">
+          <div className="total_BILL">
+            {formData.gst && (
+              <p>
+                {" "}
+                <p>
+                  Sub-Total :{" "}
+                  <span>
+                    {totals.subTotal}
+                    <CurrencyRupeeIcon className="icon_serv_BILL"></CurrencyRupeeIcon>
+                  </span>
+                </p>
+                <p>
+                  GST(18%) :{" "}
+                  <span>
+                    {totals.gst}
+                    <CurrencyRupeeIcon className="icon_serv_BILL"></CurrencyRupeeIcon>
+                  </span>
+                </p>
+              </p>
+            )}
+
+            <p>
+              Total Price :{" "}
+              <span>
+                {totals.total}
+
+                <CurrencyRupeeIcon className="icon_serv_BILL"></CurrencyRupeeIcon>
+              </span>
+            </p>
+          </div>
+          <div className="img_qr">
+            <img src={qr} alt="" />
+          </div>
+        </div>
       </div>
     </div>
   );
