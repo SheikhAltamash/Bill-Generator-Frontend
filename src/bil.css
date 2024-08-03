@@ -370,7 +370,6 @@ margin-bottom: 0.7rem;
   left: 0;
   z-index: -1; /* Ensure the PDF is behind all other content */
 
-
 width: 100%;
 padding-left: 1rem;
 
@@ -451,6 +450,7 @@ width: fit-content;
 height: fit-content;
    position: relative;
    top: -1.4rem;
+  
 }
 .img_qr img{
     height: 5rem;
@@ -469,6 +469,7 @@ width: 100%;
 bottom: 4rem;
 text-align: center;
 z-index: 10;
+
 
     
 }
@@ -489,5 +490,7 @@ z-index: 10;
     .img_qr {
         right: 7rem;
     }
-   
+   .img_qr{
+    right: -1rem;
+   }
 }
